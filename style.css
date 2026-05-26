@@ -117,6 +117,13 @@ p {
   font-size: 16px;
 }
 
+.greeting {
+  color: #ff69b4;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .small-text {
   font-size: 13px;
   color: #999;
