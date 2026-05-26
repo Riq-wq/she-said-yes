@@ -154,6 +154,24 @@ button:disabled {
   padding: 16px 40px;
 }
 
+.no-btn {
+  background: #ddd;
+  color: #666;
+  font-size: 18px;
+  padding: 16px 40px;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 80px;
+}
+
 /* Form styles */
 .form-group {
   margin-bottom: 20px;

@@ -12,6 +12,21 @@ function goToPage(pageNumber) {
   document.getElementById('page' + pageNumber).classList.add('active');
 }
 
+function moveButton() {
+  const noBtn = document.getElementById('noBtn');
+  const container = document.querySelector('.card');
+  
+  // Get random position within the card
+  const maxX = container.offsetWidth - noBtn.offsetWidth - 60;
+  const maxY = container.offsetHeight - noBtn.offsetHeight - 60;
+  
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+  
+  noBtn.style.left = randomX + 'px';
+  noBtn.style.top = randomY + 'px';
+}
+
 function saveDateTime() {
   const dateInput = document.getElementById('dateInput').value;
   const timeInput = document.getElementById('timeInput').value;
