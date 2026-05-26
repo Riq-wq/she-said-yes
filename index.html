@@ -3,25 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You Said Yes</title>
+  <title>Will You Go With Me?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <img
-        src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
-        alt="happy gif"
-        class="gif"
-      />
-      
-      <h1>WAIT YOU ACTUALLY SAID YES?? 😭</h1>
-      <p>I was so ready for you to say no 🥲</p>
-      
-      <button onclick="showMessage()">okay okay! →</button>
+  <!-- Page 1: Initial Question -->
+  <div class="page active" id="page1">
+    <div class="container">
+      <div class="card">
+        <img src="https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif" alt="cute bear" class="gif" />
+        <h1>🌹 Will you go with me? 🌹</h1>
+        <button class="yes-btn" onclick="goToPage(2)">YES ✓</button>
+      </div>
     </div>
   </div>
-  
+
+  <!-- Page 2: Excited Response -->
+  <div class="page" id="page2">
+    <div class="container">
+      <div class="card">
+        <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" alt="happy gif" class="gif" />
+        <h1>WAIT YOU ACTUALLY SAID YES?? 😭</h1>
+        <p>I was so ready for you to say no 🥲</p>
+        <button onclick="goToPage(3)">okay okay! →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 3: Date Picker -->
+  <div class="page" id="page3">
+    <div class="container">
+      <div class="card">
+        <div class="icon">📅🐾</div>
+        <h1>So... when are you free?</h1>
+        <div class="form-group">
+          <label>Pick a Date</label>
+          <input type="date" id="dateInput" />
+        </div>
+        <div class="form-group">
+          <label>What Time? ⏰</label>
+          <input type="time" id="timeInput" />
+        </div>
+        <button onclick="saveDateTime()">set the date! →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 4: Food Choice -->
+  <div class="page" id="page4">
+    <div class="container">
+      <div class="card">
+        <h1>What are we feeling? 🍽️✨</h1>
+        <div class="food-grid">
+          <div class="food-item" onclick="selectFood('Pizza')">
+            <div class="food-icon">🍕</div>
+            <p>Pizza</p>
+          </div>
+          <div class="food-item" onclick="selectFood('Sushi')">
+            <div class="food-icon">🍣</div>
+            <p>Sushi</p>
+          </div>
+          <div class="food-item" onclick="selectFood('Burgers')">
+            <div class="food-icon">🍔</div>
+            <p>Burgers</p>
+          </div>
+          <div class="food-item" onclick="selectFood('Pasta')">
+            <div class="food-icon">🍝</div>
+            <p>Pasta</p>
+          </div>
+          <div class="food-item" onclick="selectFood('Tacos')">
+            <div class="food-icon">🌮</div>
+            <p>Tacos</p>
+          </div>
+          <div class="food-item" onclick="selectFood('Ramen')">
+            <div class="food-icon">🍜</div>
+            <p>Ramen</p>
+          </div>
+        </div>
+        <button id="foodBtn" onclick="goToPage(5)" disabled>skip omg! →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 5: Final Message -->
+  <div class="page" id="page5">
+    <div class="container">
+      <div class="card">
+        <img src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" alt="excited" class="gif round-gif" />
+        <h1>glad you didn't say no, be ready by 6, I'm coming to get you 🏎️</h1>
+        <p class="small-text">p.s. normal people text. I made a website on Replit, duh! lunch for you no big deal!</p>
+        <div class="hearts">
+          <span>💗</span>
+          <span>💗</span>
+          <span>💗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
