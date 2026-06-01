@@ -1,5 +1,6 @@
 let userName = '';
 let userContact = '';
+let userMessage = '';
 let selectedDate = '';
 let selectedTime = '';
 let selectedFood = '';
@@ -19,6 +20,7 @@ function goToPage(pageNumber) {
 function submitStart() {
   const name = document.getElementById('nameInput').value.trim();
   const contact = document.getElementById('contactInput').value.trim();
+  const message = document.getElementById('messageInput').value.trim();
 
   if (!name || !contact) {
     alert('Please enter your name and contact number! 💕');
@@ -27,6 +29,7 @@ function submitStart() {
 
   userName = name;
   userContact = contact;
+  userMessage = message || 'No message';
 
   goToPage(2);
 }
@@ -83,6 +86,7 @@ function sendEmail() {
   const templateParams = {
     name: userName,
     contact: userContact,
+    message: userMessage,
     date: selectedDate,
     time: selectedTime,
     food: selectedFood || 'Not selected',

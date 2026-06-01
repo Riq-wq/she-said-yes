@@ -207,6 +207,22 @@ button:disabled {
   border-color: #ff69b4;
 }
 
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ffb6c1;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+.form-group textarea:focus {
+  border-color: #ff69b4;
+}
+
 /* Food grid */
 .food-grid {
   display: grid;
