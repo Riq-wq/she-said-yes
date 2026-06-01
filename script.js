@@ -1,5 +1,5 @@
 let userName = '';
-let userWhatsApp = '';
+let userContact = '';
 let selectedDate = '';
 let selectedTime = '';
 let selectedFood = '';
@@ -18,15 +18,15 @@ function goToPage(pageNumber) {
 
 function submitStart() {
   const name = document.getElementById('nameInput').value.trim();
-  const whatsapp = document.getElementById('whatsappInput').value.trim();
+  const contact = document.getElementById('contactInput').value.trim();
 
-  if (!name || !whatsapp) {
-    alert('Please enter your name and WhatsApp number! 💕');
+  if (!name || !contact) {
+    alert('Please enter your name and contact number! 💕');
     return;
   }
 
   userName = name;
-  userWhatsApp = whatsapp;
+  userContact = contact;
 
   goToPage(2);
 }
@@ -85,7 +85,7 @@ function finishFlow() {
 function sendEmail() {
   const templateParams = {
     name: userName,
-    whatsapp: userWhatsApp,
+    contact: userContact,
     date: selectedDate,
     time: selectedTime,
     food: selectedFood || 'Not selected',
