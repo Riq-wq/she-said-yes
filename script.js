@@ -4,7 +4,7 @@ let selectedDate = '';
 let selectedTime = '';
 let selectedFood = '';
 
-emailjs.init('-kKYV0aFaLIjimXr0'); // Replace with your EmailJS public key
+try { emailjs.init('-kKYV0aFaLIjimXr0'); } catch (e) { console.warn('EmailJS init failed:', e); }
 
 function goToPage(pageNumber) {
   // Hide all pages
@@ -61,18 +61,15 @@ function saveDateTime() {
   goToPage(4);
 }
 
-function selectFood(food) {
+function selectFood(food, element) {
   selectedFood = food;
   
-  // Remove selected class from all items
   document.querySelectorAll('.food-item').forEach(item => {
     item.classList.remove('selected');
   });
   
-  // Add selected class to clicked item
-  event.target.closest('.food-item').classList.add('selected');
+  element.classList.add('selected');
   
-  // Enable the button
   document.getElementById('foodBtn').disabled = false;
   document.getElementById('foodBtn').textContent = 'Next →';
 }
