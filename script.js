@@ -23,7 +23,7 @@ function submitStart() {
   const message = document.getElementById('messageInput').value.trim();
 
   if (!name || !contact || !message) {
-    alert('Please fill in all fields! 💕');
+    alert("Aww don't leave those empty, beautiful! Fill them all for me 💕");
     return;
   }
 
