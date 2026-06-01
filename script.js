@@ -22,8 +22,8 @@ function submitStart() {
   const contact = document.getElementById('contactInput').value.trim();
   const message = document.getElementById('messageInput').value.trim();
 
-  if (!name || !contact) {
-    alert('Please enter your name and contact number! 💕');
+  if (!name || !contact || !message) {
+    alert('Please fill in all fields! 💕');
     return;
   }
 
