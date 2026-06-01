@@ -14,8 +14,16 @@
         <img src="https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif" alt="cute bear" class="gif" />
         <p class="greeting">Hey cutie, It's RIQ here</p>
         <h1>🌹 Will you go with me? 🌹</h1>
+        <div class="form-group">
+          <label>Your Name 💕</label>
+          <input type="text" id="nameInput" placeholder="Enter your name..." />
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number 📱</label>
+          <input type="tel" id="whatsappInput" placeholder="Enter your WhatsApp number..." />
+        </div>
         <div class="button-container">
-          <button class="yes-btn" onclick="goToPage(2)">YES ✓</button>
+          <button class="yes-btn" onclick="submitStart()">YES ✓</button>
           <button class="no-btn" id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">NO ✗</button>
         </div>
       </div>
@@ -84,7 +92,7 @@
             <p>Ramen</p>
           </div>
         </div>
-        <button id="foodBtn" onclick="goToPage(5)" disabled>skip omg! →</button>
+        <button id="foodBtn" onclick="finishFlow()" disabled>Next →</button>
       </div>
     </div>
   </div>
@@ -104,6 +112,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

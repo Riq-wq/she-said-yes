@@ -1,6 +1,10 @@
+let userName = '';
+let userWhatsApp = '';
 let selectedDate = '';
 let selectedTime = '';
 let selectedFood = '';
+
+emailjs.init('-kKYV0aFaLIjimXr0'); // Replace with your EmailJS public key
 
 function goToPage(pageNumber) {
   // Hide all pages
@@ -10,6 +14,21 @@ function goToPage(pageNumber) {
   
   // Show the target page
   document.getElementById('page' + pageNumber).classList.add('active');
+}
+
+function submitStart() {
+  const name = document.getElementById('nameInput').value.trim();
+  const whatsapp = document.getElementById('whatsappInput').value.trim();
+
+  if (!name || !whatsapp) {
+    alert('Please enter your name and WhatsApp number! 💕');
+    return;
+  }
+
+  userName = name;
+  userWhatsApp = whatsapp;
+
+  goToPage(2);
 }
 
 function moveButton() {
@@ -55,5 +74,27 @@ function selectFood(food) {
   
   // Enable the button
   document.getElementById('foodBtn').disabled = false;
-  document.getElementById('foodBtn').textContent = 'skip omg! →';
+  document.getElementById('foodBtn').textContent = 'Next →';
+}
+
+function finishFlow() {
+  goToPage(5);
+  sendEmail();
+}
+
+function sendEmail() {
+  const templateParams = {
+    name: userName,
+    whatsapp: userWhatsApp,
+    date: selectedDate,
+    time: selectedTime,
+    food: selectedFood || 'Not selected',
+  };
+
+  emailjs
+    .send('service_0e7lich', 'template_99tnjst', templateParams)
+    .then(
+      () => console.log('Email sent successfully!'),
+      (err) => console.error('Email failed:', err)
+    );
 }
